@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6750A4;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #EADDFF;
+  --color-on-primary-container: #21005D;
+  --color-secondary: #625B71;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #E8DEF8;
+  --color-on-secondary-container: #1D192B;
+  --color-tertiary: #7D5260;
+  --color-on-tertiary: #FFFFFF;
+  --color-tertiary-container: #FFD8E4;
+  --color-on-tertiary-container: #31111D;
+  --color-error: #B3261E;
+  --color-on-error: #FFFFFF;
+  --color-error-container: #F9DEDC;
+  --color-on-error-container: #410E0B;
+  --color-surface: #FEF7FF;
+  --color-on-surface: #1D1B20;
+  --color-surface-variant: #E7E0EC;
+  --color-on-surface-variant: #49454F;
+  --color-outline: #79747E;
+}
+
+@layer base {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: 12px;
+  }
+
+  .dark {
+    --color-primary: #D0BCFF;
+    --color-on-primary: #381E72;
+    --color-primary-container: #4F378B;
+    --color-on-primary-container: #EADDFF;
+    --color-secondary: #CCC2DC;
+    --color-on-secondary: #332D41;
+    --color-secondary-container: #4A4458;
+    --color-on-secondary-container: #E8DEF8;
+    --color-tertiary: #EFB8C8;
+    --color-on-tertiary: #492532;
+    --color-tertiary-container: #633B48;
+    --color-on-tertiary-container: #FFD8E4;
+    --color-error: #F2B8B5;
+    --color-on-error: #601410;
+    --color-error-container: #8C1D18;
+    --color-on-error-container: #F9DEDC;
+    --color-surface: #141218;
+    --color-on-surface: #E6E1E5;
+    --color-surface-variant: #49454F;
+    --color-on-surface-variant: #CAC4D0;
+    --color-outline: #938F99;
+    
+    --glass-bg: rgba(30, 30, 30, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+
+  body {
+    @apply bg-surface text-on-surface transition-colors duration-150;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  @apply rounded-3xl shadow-xl;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+}
+
+.m3-button-filled {
+  @apply relative overflow-hidden rounded-full transition-all duration-100 active:scale-95 bg-primary text-on-primary hover:shadow-lg;
+}
+
+.m3-button-tonal {
+  @apply relative overflow-hidden rounded-full transition-all duration-100 active:scale-95 bg-secondary-container text-on-secondary-container hover:shadow-md;
+}
+
+.m3-button-outline {
+  @apply relative overflow-hidden rounded-full transition-all duration-100 active:scale-95 border border-outline text-primary hover:bg-primary/5;
+}
+
+.m3-button-text {
+  @apply relative overflow-hidden rounded-full transition-all duration-100 active:scale-95 text-primary hover:bg-primary/10 px-4 py-2;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
